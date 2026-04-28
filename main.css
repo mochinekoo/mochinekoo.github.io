@@ -1,3 +1,40 @@
+.aiueo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;      /* テキストを水平方向に中央 */
+    font-family: "Agency FB", system-ui;
+    font-size: 120%;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+.box {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    border-radius: 20px;
+    border: 10px solid black;
+    background: aliceblue;
+}
+
+.button {
+    margin: 0.5em;
+    display: inline-block;
+    padding: 1em 0.5em;
+    text-decoration: none; /* none: 下線を消す */
+    background: #668ad8; /*ボタン色*/
+    color: #ffffff; /* 文字の色 */
+    font-family: system-ui; /* フォント */
+    border-bottom: solid 4px #627295; /* 下にある影 */
+    border-radius: 10px; /* 角丸 */
+}
+
+.button:active {
+    -webkit-transform: translateY(5px); /* 古いブラウザでも動くやつ */
+    transform: translateY(5px); /* ボタンが下に動く */
+    border-bottom: none;/*線を消す*/
+}
+
 .logo_text {
     width: auto;
     height: 100%;
