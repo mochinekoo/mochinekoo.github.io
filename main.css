@@ -1,3 +1,11 @@
+p {
+    margin: 0 auto;
+}
+
+.counter {
+    text-align: left;
+}
+
 .aiueo {
     display: flex;
     flex-direction: column;
