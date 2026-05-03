@@ -28,6 +28,7 @@ nav {
 
 .box_parent {
     display: flex;
+    justify-content: center;
 }
 
 .sub_profile_box {
