@@ -1,12 +1,21 @@
 .sub_portfolio_box {
     width: 80%;
-    height: 100px;
+    height: auto;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     background-color: rgb(217 233 244);
     border-radius: 10px 10px 10px 10px;
     border: 2px solid rgb(0 0 0);
+}
+
+.sub_portfolio_box img {
+    width: 90%;
+    height: 90%;
+}
+
+.sub_portfolio_box a {
+    text-decoration: none;
 }
 
 .filter_box {
