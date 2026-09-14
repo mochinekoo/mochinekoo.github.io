@@ -1,0 +1,22 @@
+.sub_portfolio_box {
+    width: 80%;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(217 233 244);
+    border-radius: 10px 10px 10px 10px;
+    border: 2px solid rgb(0 0 0);
+}
+
+.filter_box {
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-family: "源真ゴシックP Medium", system-ui;
+    width: auto;
+    height: auto;
+    color: black;
+    background-color: rgb(189 184 184);
+    border-radius: 10px 10px 10px 10px;
+}
