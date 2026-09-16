@@ -1,5 +1,5 @@
-const filterBox = document.querySelectorAll(".filter_box");
-const items = document.querySelectorAll(".portfolio_item");
+const filterBox = document.querySelectorAll<HTMLElement>(".filter_box");
+const items = document.querySelectorAll<HTMLElement>(".portfolio_item");
 
 //    color: black;
 //     background-color: rgb(189 184 184);
