@@ -2,6 +2,18 @@ nav {
 
 }
 
+.left_text {
+    font-family: HG創英角ｺﾞｼｯｸUB, serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #42aa76;
+    margin-top: 10px;
+}
+
+.left_text a {
+    color: #2a2a2c;
+}
+
 .profile_box {
     width: 300px;
     height: auto;
@@ -32,7 +44,7 @@ nav {
 }
 
 .sub_profile_box {
-    width: 300px;
+    width: 80%;
     height: auto;
     margin-top: 10px;
     margin-left: 10px;
