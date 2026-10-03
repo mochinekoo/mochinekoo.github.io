@@ -12,6 +12,7 @@
     border-bottom: 1px solid #2a2a2c;
     display: flex;
     justify-content: space-between;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .menu_bar img {
