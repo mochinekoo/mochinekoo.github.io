@@ -58,6 +58,7 @@
             font-weight: bold;
             border: gray solid 1px;
             border-radius: 10px;
+            cursor: pointer;
         }
 
         .box2_langButton {
@@ -105,69 +106,57 @@
     </ul>
 </nav>
 
-<div class="box_parent">
-    <div class="sub_portfolio_box">
-        フィルター
-
-        <div class="box_parent">
-            <div class="filter_box" data-filter="All">全て</div>
-            <div class="filter_box" data-filter="Minecraft">Minecraftプラグイン</div>
-            <div class="filter_box" data-filter="YMM4">YMM4プラグイン</div>
-            <div class="filter_box" data-filter="JavaFX">JavaFX</div>
-            <div class="filter_box" data-filter="DirectX">DxLib</div>
-            <div class="filter_box" data-filter="DirectX">DirectX</div>
-            <div class="filter_box" data-filter="Android">Android</div>
-            <div class="filter_box" data-filter="WPF">WPF</div>
-            <div class="filter_box" data-filter="Unity">Unity</div>
-            <div class="filter_box" data-filter="Unreal">Unreal</div>
-            <div class="filter_box" data-filter="Manual">マニュアル系</div>
-        </div>
-
-    </div>
-</div>
-
+<script>
+    function AddParam(key, value) {
+        const windowParam = window.location.searchParams;
+        const url = new URL(window.location);
+        url.searchParams.append(key, value);
+        window.location.href = url.toString();
+    }
+</script>
 
 <div class="box2">
     <div class="box2_leftChild">
         <a class="box2_title">フィルター</a>
         <input class="box2_input">
         <div class="box2_tagButtonParent">
-            <a class="box2_tagButton">全て</a>
-            <a class="box2_tagButton">個人製作</a>
-            <a class="box2_tagButton">グループ製作</a>
-            <a class="box2_tagButton">ゲーム</a>
+            <a class="box2_tagButton" data-filter="All">全て</a>
+            <a class="box2_tagButton" data-filter="">個人製作</a>
+            <a class="box2_tagButton" data-filter="">グループ製作</a>
+            <a class="box2_tagButton" data-filter="">ゲーム</a>
         </div>
         <div class="box2_tagButtonParent">
-            <a style="background: #81642f; " class="box2_tagButton box2_langButton">Assembly</a>
-            <a style="background: deeppink;" class="box2_tagButton box2_langButton">C++</a>
-            <a style="background: green;" class="box2_tagButton box2_langButton">CUDA</a>
-            <a style="background: #63882c;" class="box2_tagButton box2_langButton">HLSL</a>
-            <a style="background: forestgreen;" class="box2_tagButton box2_langButton">C#</a>
-            <a style="background: #af7119;" class="box2_tagButton box2_langButton">Java</a>
-            <a style="background: mediumpurple;" class="box2_tagButton box2_langButton">Kotlin</a>
-            <a style="background: cornflowerblue;" class="box2_tagButton box2_langButton">Python</a>
-            <a style="background: indianred;" class="box2_tagButton box2_langButton">HTML・CSS</a>
-            <a style="background: #6c6c00;" class="box2_tagButton box2_langButton">JavaScript</a>
-            <a style="background: blue;" class="box2_tagButton box2_langButton">TypeScript</a>
-            <a style="background: deepskyblue;" class="box2_tagButton box2_langButton">Go</a>
-            <a style="background: red;" class="box2_tagButton box2_langButton">Ruby</a>
-            <a style="background: black;" class="box2_tagButton box2_langButton">Rust</a>
+            <a style="background: #81642f; " class="box2_tagButton box2_langButton" data-filter="Assembly">Assembly</a>
+            <a style="background: deeppink;" class="box2_tagButton box2_langButton" data-filter="C++">C++</a>
+            <a style="background: green;" class="box2_tagButton box2_langButton" data-filter="CUDA">CUDA</a>
+            <a style="background: #63882c;" class="box2_tagButton box2_langButton" data-filter="HLSL">HLSL</a>
+            <a style="background: #d0aaf6;" class="box2_tagButton box2_langButton" data-filter="GLSL">GLSL</a>
+            <a style="background: forestgreen;" class="box2_tagButton box2_langButton" data-filter="C#">C#</a>
+            <a style="background: #af7119;" class="box2_tagButton box2_langButton" data-filter="Java">Java</a>
+            <a style="background: mediumpurple;" class="box2_tagButton box2_langButton" data-filter="Kotlin">Kotlin</a>
+            <a style="background: cornflowerblue;" class="box2_tagButton box2_langButton" data-filter="Python">Python</a>
+            <a style="background: indianred;" class="box2_tagButton box2_langButton" data-filter="HTML・CSS">HTML・CSS</a>
+            <a style="background: #6c6c00;" class="box2_tagButton box2_langButton" data-filter="JavaScript">JavaScript</a>
+            <a style="background: blue;" class="box2_tagButton box2_langButton" data-filter="TypeScript">TypeScript</a>
+            <a style="background: deepskyblue;" class="box2_tagButton box2_langButton" data-filter="Go">Go</a>
+            <a style="background: red;" class="box2_tagButton box2_langButton" data-filter="Ruby">Ruby</a>
+            <a style="background: black;" class="box2_tagButton box2_langButton" data-filter="Rust">Rust</a>
         </div>
         <div class="box2_tagButtonParent">
-            <a class="box2_tagButton">Android</a>
-            <a class="box2_tagButton">Spigot</a>
-            <a class="box2_tagButton">BungeeCord</a>
-            <a class="box2_tagButton">DirectX11</a>
-            <a class="box2_tagButton">ASP.NET</a>
-            <a class="box2_tagButton">Django</a>
-            <a class="box2_tagButton">DiscordBot</a>
-            <a class="box2_tagButton">JavaFX</a>
-            <a class="box2_tagButton">Unity</a>
-            <a class="box2_tagButton">Unreal</a>
-            <a class="box2_tagButton">WPF</a>
-            <a class="box2_tagButton">Aviutlプラグイン</a>
-            <a class="box2_tagButton">YMM4プラグイン</a>
-            <a class="box2_tagButton">マニュアル</a>
+            <a class="box2_tagButton" data-filter="Android">Android</a>
+            <a class="box2_tagButton" data-filter="Spigot">Spigot</a>
+            <a class="box2_tagButton" data-filter="BungeeCord">BungeeCord</a>
+            <a class="box2_tagButton" data-filter="DirectX11">DirectX11</a>
+            <a class="box2_tagButton" data-filter="ASP.NET">ASP.NET</a>
+            <a class="box2_tagButton" data-filter="Django">Django</a>
+            <a class="box2_tagButton" data-filter="DiscordBot">DiscordBot</a>
+            <a class="box2_tagButton" data-filter="JavaFX">JavaFX</a>
+            <a class="box2_tagButton" data-filter="Unity">Unity</a>
+            <a class="box2_tagButton" data-filter="Unreal">Unreal</a>
+            <a class="box2_tagButton" data-filter="WPF">WPF</a>
+            <a class="box2_tagButton" data-filter="Aviutl">Aviutlプラグイン</a>
+            <a class="box2_tagButton" data-filter="YMM4">YMM4プラグイン</a>
+            <a class="box2_tagButton" data-filter="Manual">マニュアル</a>
         </div>
     </div>
 </div>

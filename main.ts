@@ -1,4 +1,4 @@
-const filterBox = document.querySelectorAll<HTMLElement>(".filter_box");
+const filterBox = document.querySelectorAll<HTMLElement>(".box2_tagButton");
 const items = document.querySelectorAll<HTMLElement>(".portfolio_item");
 
 //    color: black;
@@ -7,14 +7,6 @@ const items = document.querySelectorAll<HTMLElement>(".portfolio_item");
 
 filterBox.forEach((filter) => {
     filter.addEventListener("click", (e) => {
-        filterBox.forEach((filter1) => {
-            filter1.style.color = "black";
-            filter1.style.backgroundColor = "rgb(189 184 184)"
-        });
-
-        filter.style.color = "white";
-        filter.style.backgroundColor = "black";
-
         const selectFilter = filter.dataset.filter;
         items.forEach((item) => {
             if (selectFilter === "All" || item.dataset.category == selectFilter) {
