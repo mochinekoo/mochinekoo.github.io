@@ -1,53 +1,5 @@
-const filterBox = document.querySelectorAll(".box2_tagButton");
-const items = document.querySelectorAll(".portfolio_item");
-const boxInputs = document.querySelectorAll(".box2_input");
 const filterList = [];
 let searchTypeContain = false;
-filterBox.forEach((filter) => {
-    filter.addEventListener("click", (e) => {
-        const selectFilter = filter.dataset.filter;
-        items.forEach((item) => {
-            if (selectFilter === "All" || item.dataset.category == selectFilter) {
-                item.style.display = "";
-            }
-            else {
-                item.style.display = "none";
-            }
-        });
-    });
-});
-boxInputs.forEach((boxInput) => {
-    boxInput.addEventListener("input", (e) => {
-        const inputWord = boxInput.value;
-        items.forEach((item) => {
-            const tagTitles = item.querySelectorAll(".box2_title");
-            tagTitles.forEach((tagTitle) => {
-                if (inputWord == "") {
-                    item.style.display = "flex";
-                    return;
-                }
-                if (searchTypeContain) {
-                    if (tagTitle.textContent.includes(inputWord)) {
-                        item.style.display = "flex";
-                        return;
-                    }
-                }
-                else {
-                    if (inputWord == tagTitle.textContent) {
-                        item.style.display = "flex";
-                        return;
-                    }
-                }
-                item.style.display = "none";
-            });
-        });
-    });
-});
-function setContainType(flag) {
-    searchTypeContain = flag;
-    console.log(searchTypeContain);
-}
-window.setContainType = setContainType;
 function createCardView() {
     fetch("./portfolio.json")
         .then((response) => response.json())
@@ -84,8 +36,84 @@ function createCardView() {
                     '</div>';
             boxParent?.appendChild(box2);
         });
+        const tagButtons = document.querySelectorAll(".box2_tagButton");
+        const portfolioItems = document.querySelectorAll(".portfolio_item");
+        const boxInputs = document.querySelectorAll(".box2_input");
+        const hasTag = document.querySelector(".hasTag");
+        tagButtons.forEach((tagButton) => {
+            tagButton.addEventListener("click", (e) => {
+                const selectFilter = tagButton.dataset.filter; //ボタンのフィルター
+                if (selectFilter == "All") { // 押したやつがAll
+                    filterList.length = 0;
+                    filterList.push("All"); //押したやつがAllなら、空にしてAllを追加
+                }
+                else { // 押したやつがAllじゃない
+                    const index = filterList.indexOf(selectFilter);
+                    if (index == -1) {
+                        // @ts-ignore
+                        filterList.push(selectFilter); // フィルターリストに含まれていない場合は追加
+                    }
+                    else {
+                        filterList.splice(index, 1); // フィルターリストに含まれている場合は、インデックスから削除
+                    }
+                }
+                portfolioItems.forEach((portfolioItem) => {
+                    const category = portfolioItem.dataset.category;
+                    // @ts-ignore
+                    const splitCategorys = category.split(",");
+                    let hide = true;
+                    filterList.forEach(filter_ => {
+                        splitCategorys.forEach((split) => {
+                            if (split == filter_ || filter_ == "All") {
+                                hide = false;
+                            }
+                        });
+                    });
+                    if (hide) {
+                        portfolioItem.style.display = "none";
+                    }
+                    else {
+                        portfolioItem.style.display = "flex";
+                    }
+                });
+                // @ts-ignore
+                hasTag.textContent = "現在のタグ：" + filterList;
+            });
+        });
+        boxInputs.forEach((boxInput) => {
+            boxInput.addEventListener("input", (e) => {
+                const inputWord = boxInput.value;
+                portfolioItems.forEach((item) => {
+                    const tagTitles = item.querySelectorAll(".box2_title");
+                    tagTitles.forEach((tagTitle) => {
+                        if (inputWord == "") {
+                            item.style.display = "flex";
+                            return;
+                        }
+                        if (searchTypeContain) {
+                            if (tagTitle.textContent.includes(inputWord)) {
+                                item.style.display = "flex";
+                                return;
+                            }
+                        }
+                        else {
+                            if (inputWord == tagTitle.textContent) {
+                                item.style.display = "flex";
+                                return;
+                            }
+                        }
+                        item.style.display = "none";
+                    });
+                });
+            });
+        });
     })
         .catch((error) => console.error("読み込みエラー:", error));
 }
 createCardView();
+function setContainType(flag) {
+    searchTypeContain = flag;
+    console.log(searchTypeContain);
+}
+window.setContainType = setContainType;
 export {};
