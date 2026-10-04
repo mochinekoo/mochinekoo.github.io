@@ -1,1 +1,2 @@
 *.js linguist-detectable=false
+*.json linguist-language=JSON linguist-detectable=true
